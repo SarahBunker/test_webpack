@@ -7,15 +7,19 @@ const config = {
     filename: 'main.js'
   },
   module: {
-  rules: [
-    {
-      test: /\.js$/,
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env', '@babel/preset-react']
-      }
-    },
-  ],
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-react', '@babel/preset-env'],
+        },
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ]
 },
 }
 module.exports = config
